@@ -12,7 +12,7 @@ const Header = () => {
       <Container>
         <Nav className="mr-auto" navbar>
           <NavbarBrand tag={Link} to="/">
-            ideas
+            Ideas
           </NavbarBrand>
         </Nav>
 

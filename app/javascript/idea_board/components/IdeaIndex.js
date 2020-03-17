@@ -1,11 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
+
+import IDEA_STUBS from "../idea_stubs";
+import IdeaCard from "./IdeaCard";
 
 const IdeaIndex = () => {
   return (
     <div>
-      <h1>Ideas</h1>
-      <Link to="/ideas/2">Idea 2</Link>
+      {IDEA_STUBS.map(({id, title, body}) => (
+        <IdeaCard key={id} title={title} body={body}/>
+      ))}
     </div>
   );
 };
