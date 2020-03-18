@@ -1,13 +1,14 @@
 import React from "react";
 
-import IDEA_STUBS from "../idea_stubs";
+import ideas from "../sample_ideas";
+
 import IdeaCard from "./IdeaCard";
 
 const IdeaIndex = () => {
   return (
     <div>
-      {IDEA_STUBS.map(({id, title, body}) => (
-        <IdeaCard key={id} title={title} body={body}/>
+      {ideas.map(idea => (
+        <IdeaCard key={idea.id} {...idea} />
       ))}
     </div>
   );

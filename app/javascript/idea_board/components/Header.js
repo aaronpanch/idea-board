@@ -5,7 +5,7 @@ import { Navbar, NavbarBrand, Nav, Container, Button } from "reactstrap";
 import { useAuth } from "../../shared/AuthManager";
 
 const Header = () => {
-  const { isAuthenticated, user, toggleLogin } = useAuth();
+  const { isAuthenticated, user, toggleLogin, logout } = useAuth();
 
   return (
     <Navbar light expand="md">
@@ -17,7 +17,12 @@ const Header = () => {
         </Nav>
 
         {isAuthenticated ? (
-          `Hi, ${user.name}`
+          <div className="d-flex align-items-center">
+            {`Hi, ${user.name}`}
+            <Button color="link" onClick={logout}>
+              <i>Logout</i>
+            </Button>
+          </div>
         ) : (
           <Button color="info" onClick={toggleLogin}>
             Login
